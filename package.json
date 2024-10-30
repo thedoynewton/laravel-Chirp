@@ -20,6 +20,9 @@
         "vite": "^5.0"
     },
     "dependencies": {
+        "@emotion/react": "^11.13.3",
+        "@emotion/styled": "^11.13.0",
+        "@mui/material": "^6.1.6",
         "dayjs": "^1.11.13"
     }
 }
