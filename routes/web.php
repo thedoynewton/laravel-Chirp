@@ -30,7 +30,10 @@ Route::resource('chirps', ChirpController::class)
     ->only(['index', 'store', 'update', 'destroy'])
     ->middleware(['auth', 'verified']);
 
-    Route::resource('message-templates', MessageTemplateController::class)
+Route::resource('message-templates', MessageTemplateController::class)
     ->only(['index', 'store', 'update', 'destroy'])
     ->middleware(['auth', 'verified']);
+
+Route::get('/templates/search', [MessageTemplateController::class, 'search'])->name('templates.search');
+
 require __DIR__ . '/auth.php';
