@@ -36,6 +36,14 @@ export default function Authenticated({ header, children }) {
                                 >
                                     Chirps
                                 </NavLink>
+                                <NavLink
+                                    href={route("message-templates.index")}
+                                    active={route().current(
+                                        "message-templates.index"
+                                    )}
+                                >
+                                    Message Templates
+                                </NavLink>
                             </div>
                         </div>
 
@@ -145,6 +153,12 @@ export default function Authenticated({ header, children }) {
                             active={route().current("chirps.index")}
                         >
                             Chirps
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            href={route("message-templates.index")}
+                            active={route().current("message-templates.index")}
+                        >
+                            Message Templates
                         </ResponsiveNavLink>
                     </div>
 
