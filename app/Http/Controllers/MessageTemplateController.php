@@ -14,13 +14,28 @@ class MessageTemplateController extends Controller
 {
     public function index(): Response
     {
+        // Paginate the results, fetching 10 templates per page
+        $templates = MessageTemplate::with('user:id,name')
+                    ->where('user_id', Auth::id()) // Filter by the logged-in user's ID
+                    ->latest()
+                    ->paginate(5); // Adjust the number of items per page as needed
+    
+        // Return paginated templates to Inertia, including pagination metadata
         return Inertia::render('MessageTemplates/Index', [
-            'templates' => MessageTemplate::with('user:id,name')
-                ->where('user_id', Auth::id()) // Filter by the logged-in user's ID
-                ->latest()
-                ->get(),
+            'templates' => $templates->items(), // Only pass the current page of templates
+            'pagination' => [
+                'total' => $templates->total(),
+                'per_page' => $templates->perPage(),
+                'current_page' => $templates->currentPage(),
+                'last_page' => $templates->lastPage(),
+                'from' => $templates->firstItem(),
+                'to' => $templates->lastItem(),
+                'prev_page_url' => $templates->previousPageUrl(),
+                'next_page_url' => $templates->nextPageUrl(),
+            ],
         ]);
     }
+    
 
     /**
      * Store a newly created message template in storage.
