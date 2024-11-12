@@ -21,12 +21,12 @@ export default function Dashboard() {
                     <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                         <div className="p-6 text-gray-900">
                             <CustomCard title="Welcome to Your Dashboard">
-                                You're logged in! Here’s some information displayed inside a custom card component.
+                                You're logged in!
                             </CustomCard>
-
+{/* 
                             <CustomButton onClick={handleButtonClick} color="primary">
                                 Click Me
-                            </CustomButton>
+                            </CustomButton> */}
                         </div>
                     </div>
                 </div>

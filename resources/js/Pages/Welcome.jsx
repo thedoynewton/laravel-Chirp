@@ -29,7 +29,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                 {/* Main Content */}
                 <div className="relative z-30 flex flex-col items-center text-center px-6">
                     <h1 className="text-4xl font-bold text-white">Chirp up</h1>
-                    <p className="text-neutral-300 mt-2">Don't give up, just.</p>
+                    <p className="text-cyan-300 mt-2">Don't give up, just.</p>
 
                     <nav className="mt-6 flex space-x-4">
                         {auth.user ? (
@@ -38,10 +38,10 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                             </Link>
                         ) : (
                             <>
-                                <Link href={route('login')} className="text-lg text-[#FF2D20] hover:underline transition duration-300 transform hover:scale-105">
+                                <Link href={route('login')} className="text-lg text-[#007bff] hover:underline transition duration-300 transform hover:scale-105">
                                     Log in
                                 </Link>
-                                <Link href={route('register')} className="text-lg text-[#FF2D20] hover:underline transition duration-300 transform hover:scale-105">
+                                <Link href={route('register')} className="text-lg text-[#b9afaf] hover:underline transition duration-300 transform hover:scale-105">
                                     Register
                                 </Link>
                             </>
